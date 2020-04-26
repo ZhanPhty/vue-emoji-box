@@ -76,11 +76,11 @@ export default class VueEmojiBox extends Vue {
   targetEl: any = null
   targetType: any = null
   resHtml: any = null
-  caret = 0
+  caret: any = 0
 
   // 检测
   @Watch('visible')
-  onWatchVisible(val) {
+  onWatchVisible(val: boolean) {
     this.showBox = val
   }
 
@@ -121,15 +121,15 @@ export default class VueEmojiBox extends Vue {
   // 监控事件，记录
   addClickEvent() {
     this.targetEl.addEventListener('click', () => {
-      this.caret = this.targetEl.selectionStart || document.getSelection().anchorOffset
+      this.caret = this.targetEl.selectionStart || (document as any).getSelection().anchorOffset
     })
     this.targetEl.addEventListener('keyup', () => {
-      this.caret = this.targetEl.selectionStart || document.getSelection().anchorOffset
+      this.caret = this.targetEl.selectionStart || (document as any).getSelection().anchorOffset
     })
   }
 
   // 插入数据处理
-  insertEmoji(emoji) {
+  insertEmoji(emoji: IEmoji) {
     const htmlVal = this.targetEl.value || this.targetEl.innerHTML
     this.resHtml = `${htmlVal.substr(0, this.caret)}${emoji.text}${htmlVal.substr(this.caret)}`
     this.caret += emoji.text.length

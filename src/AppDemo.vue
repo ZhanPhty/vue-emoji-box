@@ -33,7 +33,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { VueEmojiBox, renewHtml } from './index'
-import { emojiCategory, emojis } from '@/assets/emoji/emoji'
+import { emojiCategory, emojis } from './assets/emoji/emoji'
 
 Vue.use(VueEmojiBox)
 
@@ -49,7 +49,7 @@ export default class App extends Vue {
   cEmojis = emojis
   cCategories = emojiCategory
 
-  bindChange(item) {
+  bindChange(item: object) {
     this.changeEmoji = item
   }
 }

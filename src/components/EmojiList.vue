@@ -50,14 +50,14 @@ export default class EmojiList extends Vue {
    * @return
    */
   @Emit('select')
-  bindSelect(item: Emoji) {
+  bindSelect(item: any) {
     return formatEmoji(this.category.type === 'image' ? this.getImgUrl(item) : '', this.category, item)
   }
 
   /**
    * 获取img本地路径
    */
-  getImgUrl(emoji: Emoji) {
+  getImgUrl(emoji: any) {
     if (this.baseUrl && this.baseUrl !== '') {
       return `${this.baseUrl}${emoji.data}`
     }
