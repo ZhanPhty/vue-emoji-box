@@ -1,7 +1,7 @@
 {
   "name": "vue-emoji-box",
   "description": "vue表情选择器",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "author": {
     "name": "zhanphty",

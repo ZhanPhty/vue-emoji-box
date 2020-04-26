@@ -218,7 +218,7 @@ export const emojis = [
   { data: 'big/rolling-on-the-floor-laughing.png', text: 'rollingonthefloorlaughing', category: 'big' },
   { data: 'big/smirking-face.png', text: 'smirkingface', category: 'big' },
   { data: 'big/squinting-face-with-tongue.png', text: 'squintingfacewithtongue', category: 'big' },
-  { data: 'big/winking-face-with-tongue', text: 'winkingfacewithtongue', category: 'big' },
+  { data: 'big/winking-face-with-tongue.png', text: 'winkingfacewithtongue', category: 'big' },
   { data: 'big/yawning-face.png', text: 'yawningface', category: 'big' },
   { data: 'big/zany-face.png', text: 'zanyface', category: 'big' },
   { data: 'big/zipper-mouth-face.png', text: 'zippermouthface', category: 'big' },
