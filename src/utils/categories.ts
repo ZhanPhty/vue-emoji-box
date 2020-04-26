@@ -21,5 +21,5 @@ export const categoriesDefault: ICategory[] = [
     icon: '',
     textPattern: '',
     type: 'emoticon'
-  },
+  }
 ]

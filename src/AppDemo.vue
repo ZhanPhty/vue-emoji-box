@@ -13,7 +13,7 @@
       </div>
       <div class="html" v-html="renewHtml(textareaVal, cCategories, cEmojis, baseUrl)"></div>
       <div>
-        <textarea id="demoText" rows="3" class="demo-text" />
+        <textarea id="demoText" v-model="textareaVal" rows="2" class="demo-text" />
       </div>
       <VueEmojiBox
         :baseUrl="baseUrl"
@@ -45,7 +45,7 @@ Vue.use(VueEmojiBox)
 export default class App extends Vue {
   baseUrl = '/emoji/'
   changeEmoji: object = {}
-  textareaVal = 'zhegeshi @(茶杯)@(便便)哦的是@(不高兴)@(嘚瑟)@(红领巾)hahahaha'
+  textareaVal = ''
   cEmojis = emojis
   cCategories = emojiCategory
 
@@ -79,11 +79,15 @@ export default class App extends Vue {
 
 .html {
   margin-bottom: 20px;
+
+  .vemoji-image {
+    width: 30px;
+  }
 }
 
 .demo-text {
   width: 280px;
-  min-height: 60px;
+  min-height: 40px;
   padding: 10px 20px;
 
   &:focus,

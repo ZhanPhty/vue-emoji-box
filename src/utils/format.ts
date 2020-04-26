@@ -30,17 +30,33 @@ export const formatEmoji = (imgUrl: string, category: Category, emojis: Emoji) =
 export const renewHtml = (html: string, category: Category[], emojis: Emoji[], baseUrl = '/') => {
   console.log(html)
   console.log(baseUrl)
+  let resultHtml = html
   category.map(cate => {
     if (cate.type === 'image' && cate.textPattern !== '') {
-      const patternStr = cate.textPattern.split('${value}')
-      console.log(patternStr)
-      const reg = new RegExp(`\\@\\((.+?)\\)`, 'g')
-      console.log(reg)
-      const regex = /\@\((.+?)\)/g
-      const result = html.match(reg)
+      const patternStr: string[] = cate.textPattern.split('${value}')
+      if (patternStr.length !== 2) {
+        throw new TypeError('prop [customCategories.textPattern] Format error, must contain "${value}", for example "@({$value})"')
+      }
 
-      console.log(result)
+      // 正则规则提取
+      let patternStart = patternStr[0].replace(new RegExp('', 'g'), '\\')
+      let patternEnd = patternStr[1].replace(new RegExp('', 'g'), '\\')
+      patternStart = patternStart.substring(0, patternStart.lastIndexOf('\\'))
+      patternEnd = patternEnd.substring(0, patternEnd.lastIndexOf('\\'))
+
+      // 查找textPattern对应的字符
+      const regExp = new RegExp(`${patternStart}(.+?)${patternEnd}`, 'g')
+      const result = html.match(regExp) || []
+
+      // 实行替换对应的图片
+      result.map((item: string) => {
+        const resStr = item.replace(new RegExp(patternStart, 'g'), '').replace(new RegExp(patternEnd, 'g'), '')
+        const resEmoji: any = emojis.find(item => {
+          return item.text === resStr && item.category === cate.id
+        })
+        resultHtml = resultHtml.replace(new RegExp(`${patternStart}${resStr}${patternEnd}`, 'g'), `<img src="${baseUrl}${resEmoji.data}" alt="${resEmoji.text}" class="vemoji-image" />`)
+      })
     }
   })
-  return html
+  return resultHtml
 }

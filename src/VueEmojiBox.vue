@@ -22,7 +22,6 @@
           @select="bindChangeCategory"
         />
       </div>
-      {{ caret }}
     </div>
   </div>
 </template>
