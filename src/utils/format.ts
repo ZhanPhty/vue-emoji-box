@@ -28,8 +28,6 @@ export const formatEmoji = (imgUrl: string | undefined, category: Category, emoj
 
 /*eslint no-useless-escape: "off"*/
 export const renewHtml = (html: string, category: Category[], emojis: Emoji[], baseUrl = '/') => {
-  console.log(html)
-  console.log(baseUrl)
   let resultHtml = html
   category.map(cate => {
     if (cate.type === 'image' && cate.textPattern !== '') {

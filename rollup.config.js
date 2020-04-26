@@ -57,7 +57,7 @@ export default {
       module: 'esnext',
       tsconfig: 'tsconfig.json',
       rollupCommonJSResolveHack: true,
-      tsconfigOverride: { exclude: ['node_modules', 'src/main.ts', 'assets'] }
+      tsconfigOverride: { exclude: ['node_modules', 'src/main.ts', 'src/AppDemo.vue', 'src/assets'] }
     }),
     less(),
     css(),
