@@ -1,5 +1,5 @@
-import { Emoji } from '@/models/Emoji'
-import { Category } from '@/models/Category'
+import { Emoji } from '../models/Emoji'
+import { Category } from '../models/Category'
 
 /**
  * 格式化emoji数据

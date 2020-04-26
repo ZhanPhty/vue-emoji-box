@@ -21,9 +21,9 @@
 
 <script lang="ts">
 import { Component, Prop, Emit, Vue } from 'vue-property-decorator'
-import { Emoji } from '@/models/Emoji'
-import { Category } from '@/models/Category'
-import { formatEmoji } from '@/utils/format'
+import { Emoji } from '../models/Emoji'
+import { Category } from '../models/Category'
+import { formatEmoji } from '../utils/format'
 
 @Component
 export default class EmojiList extends Vue {

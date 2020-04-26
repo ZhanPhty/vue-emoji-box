@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Component, Prop, Emit, Vue } from 'vue-property-decorator'
-import { Category } from '@/models/Category'
+import { Category } from '../models/Category'
 
 @Component
 export default class CategoryList extends Vue {

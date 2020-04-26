@@ -28,14 +28,14 @@
 
 <script lang="ts">
 import { Component, Prop, Emit, Watch, Vue } from 'vue-property-decorator'
-import CategoryList from '@/components/CategoryList.vue'
-import EmojiList from '@/components/EmojiList.vue'
+import CategoryList from './components/CategoryList.vue'
+import EmojiList from './components/EmojiList.vue'
 
-import { IEmoji } from '@/models/Emoji'
-import { ICategory } from '@/models/Category'
+import { IEmoji } from './models/Emoji'
+import { ICategory } from './models/Category'
 
-import { emojisDefault } from '@/utils/emojis'
-import { categoriesDefault } from '@/utils/categories'
+import { emojisDefault } from './utils/emojis'
+import { categoriesDefault } from './utils/categories'
 
 @Component({
   components: { CategoryList, EmojiList }

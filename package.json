@@ -1,7 +1,7 @@
 {
   "name": "vue-emoji-box",
   "description": "vue表情选择器",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "author": {
     "name": "zhanphty",
@@ -34,7 +34,6 @@
     "README.md"
   ],
   "dependencies": {
-    "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.1"
   },
@@ -64,6 +63,7 @@
     "rollup-plugin-vue": "^5.1.4",
     "terser": "^4.6.11",
     "typescript": "^3.8.3",
+    "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
