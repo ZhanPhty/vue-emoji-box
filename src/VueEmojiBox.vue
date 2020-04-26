@@ -38,16 +38,7 @@ import { emojisDefault } from '@/utils/emojis'
 import { categoriesDefault } from '@/utils/categories'
 
 @Component({
-  components: { CategoryList, EmojiList },
-  mounted() {
-    // 判断HTMLDivElement是否存在
-    if (this.targetId) {
-      this.$nextTick(() => {
-        this.targetEl = document.getElementById(this.targetId)
-        this.initTarget()
-      })
-    }
-  }
+  components: { CategoryList, EmojiList }
 })
 export default class VueEmojiBox extends Vue {
   @Prop() value!: string
@@ -77,6 +68,16 @@ export default class VueEmojiBox extends Vue {
   targetType: any = null
   resHtml: any = null
   caret: any = 0
+
+  mounted() {
+    // 判断HTMLDivElement是否存在
+    if (this.targetId) {
+      this.$nextTick(() => {
+        this.targetEl = document.getElementById(this.targetId)
+        this.initTarget()
+      })
+    }
+  }
 
   // 检测
   @Watch('visible')

@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ES5",
+    "module": "ESNext",
     "strict": true,
-    "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "noImplicitAny": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "noImplicitThis": false,
-    "sourceMap": true,
+    "declaration": true,
+    "sourceMap": false,
+    "declarationMap": true,
     "baseUrl": ".",
     "types": [
       "webpack-env"
