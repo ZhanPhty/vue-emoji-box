@@ -13,15 +13,15 @@
       </div>
       <div class="html" v-html="renewHtml(textareaVal, cCategories, cEmojis, baseUrl)"></div>
       <div>
-        <textarea id="demoText" v-model="textareaVal" rows="2" class="demo-text" />
+        <textarea id="demoText" rows="2" class="demo-text" />
       </div>
       <VueEmojiBox
+        targetId="demoText"
         :baseUrl="baseUrl"
         :customEmojis="cEmojis"
         :customCategories="cCategories"
         height="200px"
         @change="bindChange"
-        targetId="demoText"
         label="😀表情"
         :visible="true"
         v-model="textareaVal"
@@ -33,6 +33,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { VueEmojiBox, renewHtml } from './index'
+// import {VueEmojiBox, renewHtml } from 'vue-emoji-box'
 import { emojiCategory, emojis } from './assets/emoji/emoji'
 
 Vue.use(VueEmojiBox)
