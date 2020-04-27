@@ -88,7 +88,7 @@ export default class VueEmojiBox extends Vue {
   // 选择emoji标签
   @Emit('change')
   bindChangeEmoji(emoji: IEmoji) {
-    // this.showBox = false
+    this.showBox = false
     this.targetType && this.insertEmoji(emoji)
     // v-model
     this.$emit('input', this.resHtml)
@@ -162,10 +162,12 @@ export default class VueEmojiBox extends Vue {
     left: 0;
     border: 1px solid #eee;
     width: 380px;
+    background-color: #fff;
     padding-bottom: @footerHeigth;
     border-radius: 3px;
     box-shadow: 0 2px 8px rgba(110, 110, 110, 0.2);
     overflow: hidden;
+    z-index: 99;
 
     &__head {
       max-height: 600px;

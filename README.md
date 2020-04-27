@@ -9,6 +9,7 @@
 - [使用说明](#使用说明)
     - [组件注册](#组件注册)
     - [renewHtml](#renewHtml)
+    - [ssr使用](#ssr使用)
 - [Props](#props)
     - [targetId](#targetId)
     - [value](#value)
@@ -41,7 +42,7 @@ yarn add vue-emoji-box
 ```
 # 使用说明
 1.默认使用emoji字符表情，可自定义表情数据
-[第三方表情包](https://share.weiyun.com/5R2xl51)，表情包资源建议存放在cdn或本地静态资源目录‘/public’
+[第三方表情包](https://share.weiyun.com/5Rwaziy)，表情包资源建议存放在cdn或本地静态资源目录‘/public’
 2.组件提供`renewHtml()`方法，用于将表情字符渲染成对应的表情图片富文本
 
 ### 组件注册
@@ -110,6 +111,19 @@ export default {
   }
 }
 </script>
+```
+
+### ssr使用
+以nuxt.js为例
+
+```vue
+<template>
+  <div id="app">
+    <client-only>
+      <VueEmojiBox />
+    </client-only>
+  </div>
+</template>
 ```
 
 # Props
