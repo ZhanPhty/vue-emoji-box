@@ -1,5 +1,5 @@
 <template>
-  <div class="vemoji-main" :class="className">
+  <div class="vemoji-main" ref="vemojiMainBox" :class="className">
     <div class="vemoji-main--target" v-if="label" @click="bindBoxVisible">
       <span v-if="$slots.label">
         <slot name="label" />
@@ -71,12 +71,16 @@ export default class VueEmojiBox extends Vue {
 
   mounted() {
     // 判断HTMLDivElement是否存在
-    if (this.targetId) {
-      this.$nextTick(() => {
+
+    this.$nextTick(() => {
+      // document 绑定click事件
+      document.addEventListener('click', this.hidePanel, false)
+
+      if (this.targetId) {
         this.targetEl = document.getElementById(this.targetId)
         this.initTarget()
-      })
-    }
+      }
+    })
   }
 
   // 检测
@@ -103,6 +107,14 @@ export default class VueEmojiBox extends Vue {
   // 切换显示
   bindBoxVisible() {
     this.showBox = !this.showBox
+  }
+
+  // 点击除弹出层外的空白区域
+  hidePanel(event) {
+    const vEl: any = this.$refs.vemojiMainBox
+    if (!vEl.contains(event.target)) {
+      this.showBox = false
+    }
   }
 
   // 初始化target

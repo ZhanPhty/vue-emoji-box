@@ -58,7 +58,9 @@ export const renewHtml = (html: string, category: Category[], emojis: Emoji[], b
         })
         resultHtml = resultHtml.replace(
           new RegExp(`${patternStart}${resStr}${patternEnd}`, 'g'),
-          `<img src="${baseUrl}${baseUrl.lastIndexOf('/') === baseUrl.length - 1 ? '' : '/'}${resEmoji.data}" alt="${resEmoji.text}" class="vemoji-image" />`
+          `<img src="${baseUrl}${baseUrl.lastIndexOf('/') === baseUrl.length - 1 ? '' : '/'}${
+            resEmoji.data
+          }" alt="${resEmoji.text}" class="vemoji-image" />`
         )
       })
     }
