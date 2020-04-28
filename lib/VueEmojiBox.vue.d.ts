@@ -28,6 +28,7 @@ export default class VueEmojiBox extends Vue {
     };
     bindChangeCategory(item: ICategory): void;
     bindBoxVisible(): void;
+    hidePanel(event: any): void;
     initTarget(): void;
     addClickEvent(): void;
     insertEmoji(emoji: IEmoji): void;
