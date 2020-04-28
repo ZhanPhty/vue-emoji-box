@@ -112,7 +112,7 @@ export default class VueEmojiBox extends Vue {
   // 点击除弹出层外的空白区域
   hidePanel(event) {
     const vEl: any = this.$refs.vemojiMainBox
-    if (!vEl.contains(event.target)) {
+    if (vEl && !vEl.contains(event.target)) {
       this.showBox = false
     }
   }
