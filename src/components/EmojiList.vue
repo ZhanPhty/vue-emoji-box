@@ -59,7 +59,9 @@ export default class EmojiList extends Vue {
    */
   getImgUrl(emoji: any) {
     if (this.baseUrl && this.baseUrl !== '') {
-      return `${this.baseUrl}${emoji.data}`
+      return `${this.baseUrl}${this.baseUrl.lastIndexOf('/') === this.baseUrl.length - 1 ? '' : '/'}${
+        emoji.data
+      }`
     }
   }
 }

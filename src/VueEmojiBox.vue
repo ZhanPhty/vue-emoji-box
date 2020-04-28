@@ -4,7 +4,7 @@
       <span v-if="$slots.label">
         <slot name="label" />
       </span>
-      <span>{{ label }}</span>
+      <span v-else>{{ label }}</span>
     </div>
     <div v-if="showBox" class="vemoji-main--content" :style="{ width: width }">
       <div class="vemoji-main--content__head" :style="{ height: height }">
@@ -174,11 +174,13 @@ export default class VueEmojiBox extends Vue {
       word-break: break-all;
       overflow: auto;
       padding: 12px 16px;
+      text-align: left;
     }
 
     &__footer {
       height: @footerHeigth;
       line-height: @footerHeigth;
+      text-align: left;
       position: absolute;
       width: 100%;
       bottom: 0;
