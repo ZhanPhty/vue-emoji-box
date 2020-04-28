@@ -4,6 +4,8 @@
 ![example: web](Screenshot.jpg)
 
 ## 目录
+- [示例](#示例)
+  - [codesandbox](#codesandbox)
 - [本地运行](#本地运行)
 - [安装](#安装)
 - [使用说明](#使用说明)
@@ -24,6 +26,13 @@
 - [Events](#events)
     - [change](#change)
 ----
+
+# 示例
+
+### codesandbox
+
+[![Edit vue-emoji-box](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/vue-emoji-box-i4n76?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.vue&theme=dark)
+
 
 # 本地运行
 ```bash
